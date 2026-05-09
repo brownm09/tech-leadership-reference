@@ -1,4 +1,4 @@
-# Tech Leadership Playbooks
+# Tech Leadership Reference
 
 Operational and leadership frameworks from production engineering work across payments, platform, and compliance contexts. Each document reflects decisions made in real systems, not hypothetical best practices. Organized by the leadership domain each framework addresses.
 
