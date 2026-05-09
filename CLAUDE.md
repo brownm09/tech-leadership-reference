@@ -1,9 +1,13 @@
-# engineering-playbooks — Claude Code Configuration
+# tech-leadership-reference — Claude Code Configuration
 
 ## Repo Purpose
 
-Reference playbooks for engineering leadership, incident management, and operational practice.
+Reference frameworks for engineering leadership, incident management, and operational practice.
 All content is Markdown; there is no compiled code.
+
+## Linking conventions
+
+See [LINKING.md](LINKING.md) for when and how to cross-reference the `lifting-logbook` repo as a demonstration sandbox.
 
 ## Testing
 

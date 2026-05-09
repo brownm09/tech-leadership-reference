@@ -13,6 +13,11 @@ on-call programs, service ownership standards, and onboarding design. It complem
 structure and incident coordination; this playbook covers the underlying diagnostic
 infrastructure that makes a rotation sustainable.
 
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifact linked
+> here illustrates the technique; production-scale application of the same technique is
+> documented in [ORIGINS.md](../ORIGINS.md) where applicable.
+
 ---
 
 ## The Core Problem: Two Kinds of Legibility
@@ -244,6 +249,20 @@ this produce that enable correct inference by someone with no priors, under pres
 that question concretely — with a service catalog entry, a trace, a runbook that starts with
 symptoms, and error messages that point toward causes — and onboarding legibility follows as a
 byproduct.
+
+---
+
+---
+
+## Further reading: demonstration artifacts
+
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook) is a personal-project monorepo, not a production system at scale. The artifacts below illustrate techniques described in this playbook against an inspectable stack. See [LINKING.md](../LINKING.md) for the full convention.
+
+- **High-cardinality telemetry choices** — [TODO: link to specific instrumentation file in lifting-logbook on `main` once selected]
+- **Runbook authored against an inspectable system** — [TODO: link to runbook file]
+- **SLO definitions** — [TODO: link to SLO config]
+
+These links will be filled in when the corresponding lifting-logbook artifacts stabilize. Per [LINKING.md](../LINKING.md), citation links pin to commit SHAs; live-state links use `main`.
 
 ---
 
