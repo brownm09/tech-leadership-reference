@@ -258,11 +258,30 @@ byproduct.
 
 > **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook) is a personal-project monorepo, not a production system at scale. The artifacts below illustrate techniques described in this playbook against an inspectable stack. See [LINKING.md](../LINKING.md) for the full convention.
 
-- **High-cardinality telemetry choices** — [TODO: link to specific instrumentation file in lifting-logbook on `main` once selected]
-- **Runbook authored against an inspectable system** — [TODO: link to runbook file]
-- **SLO definitions** — [TODO: link to SLO config]
+The citation links below pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where the artifact is intended to evolve as the stack does, a `main` link is provided alongside.
 
-These links will be filled in when the corresponding lifting-logbook artifacts stabilize. Per [LINKING.md](../LINKING.md), citation links pin to commit SHAs; live-state links use `main`.
+### On runtime legibility and high-cardinality telemetry
+
+- **Backend selection rationale** — [ADR-018: Observability Stack](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-018-observability-stack.md). Records the OpenTelemetry + Grafana Cloud (Tempo / Mimir / Loki) decision, the GKE DaemonSet collector topology, the Prisma instrumentation choice, and the head-based 100% sampling stance until production traffic exists. The alternatives-considered section is the part most worth reading: it makes explicit why Honeycomb, Datadog, and self-hosting were rejected for this project's constraints — illustrating the playbook's claim that "the right backend" is a function of traffic shape, vendor lock-in tolerance, and what the team needs to query, not a context-free best practice.
+- **Local development verification path** — [Observability Runbook](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/observability.md) (live state). Documents the docker-compose stack (OTel Collector + Tempo + Loki + Prometheus + Grafana) that mirrors the production topology, plus the trace-by-`trace_id` lookup flow and log↔trace correlation queries. Demonstrates the playbook's argument that runtime legibility must be verifiable on a developer's laptop, not only in production.
+
+### On runbook structure and symptom-first authoring
+
+- **Runbook index** — [`docs/runbooks/README.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/README.md) (live state).
+- **Worked runbooks** — [`api-5xx-surge.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/api-5xx-surge.md), [`auth-provider-outage.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/auth-provider-outage.md), [`database-unreachable.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/database-unreachable.md), [`deploy-regression-rollback.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/deploy-regression-rollback.md). Each is organized around the symptom a responder sees, not the component an architect would name. They demonstrate the playbook's claim that legibility artifacts must be authored from the responder's frame of reference, not the designer's.
+
+### On SLOs as legibility infrastructure
+
+- **SLO definitions** — citation: [`docs/operations/slo.md` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/operations/slo.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/operations/slo.md). Defines availability and p95 latency SLOs for `apps/api` with explicit PromQL expressions, the 28-day rolling window, and the deliberate exclusion of 4xx responses from the bad-request count. Demonstrates that an SLO is only legible if its definition is precise enough to argue about — and that the argument is the point.
+- **SLO methodology rationale** — [ADR-019: SLO Methodology](https://github.com/brownm09/lifting-logbook/blob/main/docs/adr/ADR-019-slo-methodology.md) (live state). Records why these specific definitions, why these targets, and why recording rules over ad-hoc range vector queries.
+
+### On on-call posture for the responder
+
+- **On-call ops doc** — [`docs/operations/on-call.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/operations/on-call.md) (live state). Shows how the posture described in the [On-Call Restructuring Framework](on-call-restructuring-framework.md) collapses to a single-operator project: the diagnostic infrastructure (telemetry, runbooks, SLOs) is what makes any rotation workable, including a rotation of one.
+
+---
+
+These artifacts are not exhaustive. Per [LINKING.md](../LINKING.md), additional cross-references are added only where they add evaluative power — not as breadth for its own sake.
 
 ---
 
