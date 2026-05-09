@@ -289,6 +289,28 @@ The Stage 2 behavior is not because this engineer is smarter — it's because th
 
 ---
 
+## Appendix C: Demonstration artifacts
+
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook) is a personal-project monorepo, not a production system at scale. The artifacts below illustrate the framework's mechanisms against an inspectable stack — they do not substitute for the production rollout experience documented in [ORIGINS.md](../ORIGINS.md). See [LINKING.md](../LINKING.md) for the full convention.
+
+The personal-project rollout is the inverse of the org-scale rollouts described above: a single operator, no calibration cohort, no observability dashboard. The framework still applies — gate model collapses to "self-gate against the rubric," and the observability layer collapses to the artifacts a future reader could audit. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446); live-state links to `main`.
+
+### On policy-as-code and project-level AI configuration
+
+- **Project AI scaffolding** — [`CLAUDE.md`](https://github.com/brownm09/lifting-logbook/blob/main/CLAUDE.md) (live state). Project-local Claude Code configuration: platform constraints (Windows + Git Bash, no `jq`, npm workspaces), repo layout, and the testing command the global "Test before PR" rule depends on. Demonstrates the framework's Part 4 instrumentation principle at the smallest scale: every project carries the context an AI agent needs in version control, not in a human's head.
+- **Project automation hooks** — [`.claude/hook-config.json`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.claude/hook-config.json) (citation, SHA-pinned) and [`.claude/propose.json`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.claude/propose.json) (citation, SHA-pinned). Wire the project to its GitHub Project (epics + milestones) and to the proposal-scaffolding skill that drafts ADRs and design proposals against the repo's roadmap. Demonstrates the Gate 2 → Gate 3 prerequisite — agentic write workflows are only safe when the destination structure is itself codified.
+
+### On the gate model and rollback discipline
+
+- **Architecture decision record series** — [`docs/adr/`](https://github.com/brownm09/lifting-logbook/tree/main/docs/adr) (live state). Every architectural decision the AI participated in scaffolding is captured as an ADR with an alternatives-considered section. Demonstrates the framework's Stage 4 "outsourcing judgment" test at the artifact level: the rationale for each AI-assisted decision is durably recorded and re-readable, not lost to chat history.
+- **Proposal lifecycle** — [`docs/proposals/`](https://github.com/brownm09/lifting-logbook/tree/main/docs/proposals) (live state). Each proposal is drafted with AI assistance, marked through `proposed → accepted → shipped` states, and linked from the implementing PR. Demonstrates the Gate 1 → Gate 2 prerequisite — medium-risk AI-assisted work requires a paper trail, even on a single-operator project.
+
+### What is missing — and what that demonstrates
+
+The personal-scale stack has no team-level pulse survey, no cross-team variance dashboard, no calibration cohort. That absence is itself a demonstration: the framework's org-level mechanisms (Part 4 *Organization Level*, Part 5 *Gate 3 sustained*) only cohere at organizational scale. A reader evaluating whether to apply this framework should treat the lifting-logbook artifacts as evidence of the per-engineer mechanics, and the [ORIGINS.md](../ORIGINS.md) entries (ActBlue, CTA) as the basis for the org-level claims.
+
+---
+
 ## Changelog
 
 | Version | Date | Notes |

@@ -252,13 +252,9 @@ byproduct.
 
 ---
 
----
-
 ## Further reading: demonstration artifacts
 
-> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook) is a personal-project monorepo, not a production system at scale. The artifacts below illustrate techniques described in this playbook against an inspectable stack. See [LINKING.md](../LINKING.md) for the full convention.
-
-The citation links below pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where the artifact is intended to evolve as the stack does, a `main` link is provided alongside.
+The artifacts below illustrate the techniques described in this playbook against the demonstration sandbox introduced after the Purpose section. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the stack does, a `main` link is provided alongside.
 
 ### On runtime legibility and high-cardinality telemetry
 
@@ -273,7 +269,7 @@ The citation links below pin to commit [`413f8a6`](https://github.com/brownm09/l
 ### On SLOs as legibility infrastructure
 
 - **SLO definitions** — citation: [`docs/operations/slo.md` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/operations/slo.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/operations/slo.md). Defines availability and p95 latency SLOs for `apps/api` with explicit PromQL expressions, the 28-day rolling window, and the deliberate exclusion of 4xx responses from the bad-request count. Demonstrates that an SLO is only legible if its definition is precise enough to argue about — and that the argument is the point.
-- **SLO methodology rationale** — [ADR-019: SLO Methodology](https://github.com/brownm09/lifting-logbook/blob/main/docs/adr/ADR-019-slo-methodology.md) (live state). Records why these specific definitions, why these targets, and why recording rules over ad-hoc range vector queries.
+- **SLO methodology rationale** — citation: [ADR-019: SLO Methodology at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-019-slo-methodology.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/adr/ADR-019-slo-methodology.md). Records why these specific definitions, why these targets, and why burn-rate alerting (Workbook methodology) over simple threshold alerts.
 
 ### On on-call posture for the responder
 
