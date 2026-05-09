@@ -4,6 +4,8 @@ Operational and leadership frameworks from production engineering work across pa
 
 **[ORIGINS.md](ORIGINS.md)** traces each framework back to the specific engagement, program, and outcome that produced it, with first-person framing for each.
 
+**[LINKING.md](LINKING.md)** documents the convention for cross-references to [lifting-logbook](https://github.com/brownm09/lifting-logbook) as a demonstration sandbox for frameworks where production experience is not the basis of the claim.
+
 ## Org Design & Strategy
 
 Frameworks for how a Director or Head of Engineering structures the organization, sets technical direction, and makes investment decisions.

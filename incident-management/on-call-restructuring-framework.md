@@ -81,3 +81,29 @@ The IC rotation is the role most likely to generate questions. Staff engineers a
 **No postmortem process:** TTR and frequency data without retrospectives identifies that problems exist but not why. Jeli-style postmortems with timeline reconstruction surface the systemic causes.
 
 **Mon-Mon rotations:** Weekend and holiday handoffs create gaps that are predictable and preventable. Move the boundary to Wednesday.
+
+---
+
+## Further reading: demonstration artifacts
+
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook) is a personal-project monorepo, not a production system at scale. The framework above is grounded in the ActBlue restructuring documented in [ORIGINS.md](../ORIGINS.md); the artifacts below are complementary — they show the diagnostic infrastructure that makes any rotation tractable, including a rotation of one. See [LINKING.md](../LINKING.md) for the full convention.
+
+A single-operator on-call posture is the worst case for the framework's *separate coordination from resolution* split — there is no second person to take either role. The compensating mechanism is making the system legible enough that the same operator can fall back to the runbook rather than reasoning from first principles under pressure. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446).
+
+### On the operational contract
+
+- **On-call ops doc** — citation: [`docs/operations/on-call.md` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/operations/on-call.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/operations/on-call.md). Defines severity tiers (SEV1–3), alert-to-severity mapping, escalation paths (15-min page for SEV1, DM for SEV2), and the postmortem template. Demonstrates the framework's Implementation Checklist as an artifact: every item the checklist names has a corresponding line in this doc.
+- **On-call readiness proposal** — [`docs/proposals/2026-05-08-on-call-readiness.md`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/proposals/2026-05-08-on-call-readiness.md) (citation, SHA-pinned). Captures the problem framing and sequencing — runbooks, SLOs, and incident response are deliberately staged after the observability stack lands, not before. Demonstrates the framework's claim that on-call structure depends on detection infrastructure being in place first.
+
+### On reliability targets and burn-rate alerting
+
+- **SLO definitions** — citation: [`docs/operations/slo.md` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/operations/slo.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/operations/slo.md). 99.5% availability, p95 latency < 1s, 28-day rolling window, error budget = 3.36h, burn-rate thresholds (14×, 6×, 3×). Defines the contract that determines whether a page is warranted. Demonstrates the framework's Metrics and Tooling section: incident frequency and TTR are only meaningful against an explicit reliability target.
+- **SLO methodology rationale** — [ADR-019: SLO Methodology at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-019-slo-methodology.md) (citation, SHA-pinned). Records the choice to adopt burn-rate alerting over simple threshold alerts, with a deferral until production traffic exists for calibration.
+
+### On alert ownership and routing
+
+- **Prometheus alert rules** — [`infra/observability/alerts/api.yaml`](https://github.com/brownm09/lifting-logbook/blob/main/infra/observability/alerts/api.yaml) (live state). Three rules (`APIHighErrorRate` > 1% for 5m, `APIHighP95Latency` > 1s for 5m, `APINoRequests`); each carries a `runbook_url` annotation linking to a specific runbook. Demonstrates the *Alerts without owners* failure mode at the artifact level: every alert in this file has an explicit destination *and* a documented response path, which is the minimum bar before any rotation is sustainable.
+
+### What is missing — and what that demonstrates
+
+The single-operator rotation has no IC/responder split, no per-team rotation, no Wed-Wed handoff cadence. Those mechanisms only have meaning at organizational scale. The lifting-logbook artifacts show the diagnostic substrate the framework's structural changes depend on — they are not a substitute for the organizational restructuring documented in ORIGINS.md.
