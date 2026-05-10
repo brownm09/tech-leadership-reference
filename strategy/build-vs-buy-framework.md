@@ -392,6 +392,8 @@ If the regret score is high: document what data would have changed the decision 
 
 **Decision:** Buy (Auth0). The startup weight on strategic differentiation (auth is not differentiated) and team velocity (3 months on auth is a startup-killer at this stage) makes this clear. The 12-month assumption: at $23K/year, Auth0 pricing is manageable; if the company grows to the tier requiring $150K+/year, evaluate Keycloak migration at that point.
 
+For an additional worked evaluation against the five dimensions in a sandbox context, see the observability stack decision in the demonstration sandbox.[^ll-observability]
+
 ---
 
 ## Further Reading
@@ -399,3 +401,5 @@ If the regret score is high: document what data would have changed the decision 
 - Christensen, Clayton M. *The Innovator's Dilemma.* Harvard Business Review Press, 1997. The original framework for distinguishing core, differentiating capability from commodity capability — foundational to the strategic differentiation dimension.
 - Fowler, Martin. "Make or Buy?" *martinfowler.com*, 2018. https://martinfowler.com/bliki/MakeOrBuy.html. A concise primary-source treatment of the decision from an architecture perspective; covers the false binary and introduces the concept of integration as its own cost category.
 - CNCF. *Cloud Native Computing Foundation Landscape.* https://landscape.cncf.io/. The authoritative map of the open-source ecosystem for infrastructure and platform categories — essential reference when evaluating the partner option for DevOps and data platform decisions.
+
+[^ll-observability]: **Demonstration sandbox** ([lifting-logbook](https://github.com/brownm09/lifting-logbook) — personal-project monorepo, not a production system at scale): [ADR-018: Observability Stack](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-018-observability-stack.md) (citation: commit `413f8a6`) contains an alternatives-considered section that evaluates Honeycomb, Datadog, Grafana Cloud, and self-hosted Tempo/Loki/Mimir against vendor lock-in tolerance, per-event pricing risk, operational burden, and TCO — a worked evaluation against four of this framework's five dimensions. The only dimension not scored explicitly is strategic differentiation (observability is not a competitive differentiator at any company scale, making that dimension trivially low and not contested). See [ORIGINS.md](../ORIGINS.md) for production-scale build-vs-buy decisions.

@@ -159,6 +159,30 @@ This lifecycle model was developed from the feature lifecycle and roadmapping pr
 
 ---
 
+## Further reading: demonstration artifacts
+
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifact linked
+> here illustrates the technique; production-scale application of the same technique is
+> documented in [ORIGINS.md](../ORIGINS.md) where applicable.
+
+The artifacts below illustrate the techniques described in this playbook against the demonstration sandbox. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the stack does, a `main` link is provided alongside.
+
+### On the proposal lifecycle state machine
+
+- **Proposal lifecycle and automation** — [`docs/proposals/README.md`](https://github.com/brownm09/lifting-logbook/blob/main/docs/proposals/README.md) (live state). Documents the `draft → accepted → shipped → declined` state machine and the `/propose` skill that automates proposal creation, issue linking, and ROADMAP entry. The four statuses map structurally onto the playbook's four lifecycle stages (Discovery → Alignment → Delivery → Shipped). The key difference from this playbook's model: the proposal lifecycle is scope-definition, not outcome-tracking — there is no equivalent of the Hypothesis and Bets section or falsifiable success metrics. The proposals are the gate-to-Delivery artifact; the PRD extends that into outcome accountability.
+- **Lifecycle tooling configuration** — citation: [`.claude/propose.json` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.claude/propose.json). The skill configuration file that wires the `/propose` skill to the repo's proposals directory, GitHub project, milestones, and epics. Demonstrates that lifecycle tooling can be operationalized at the individual-project level — the state machine is not just documented but enforced by the scaffolding that creates every proposal.
+
+### On a worked end-to-end proposal
+
+- **On-call readiness proposal** — citation: [`docs/proposals/2026-05-08-on-call-readiness.md` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/proposals/2026-05-08-on-call-readiness.md). Shows a proposal moving through the full lifecycle in a single file: problem statement, proposed solution with three scoped work items, acceptance criteria, linked GitHub issue, ROADMAP milestone placement, and a final `Status: shipped`. The one-living-document structure — where the file accumulates through discovery, alignment, and delivery without being duplicated or forked — is the direct analog to this playbook's one-living-PRD principle.
+
+---
+
+These artifacts are not exhaustive. Per [LINKING.md](../LINKING.md), additional cross-references are added only where they add evaluative power — not as breadth for its own sake.
+
+---
+
 ## References
 
 - [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes, not to consume features. The job-outcome table format in §2 (job + "success looks like") is a direct application.

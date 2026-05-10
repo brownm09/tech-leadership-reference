@@ -129,3 +129,31 @@ Pipeline configuration is infrastructure. Treat it accordingly.
 **No rollback test:** Rollback procedures are defined but have not been executed since the pipeline was built. Test rollback before you need it.
 
 **Drift between environments:** Staging and production pipelines diverge over time because fixes go to production first and are not backported. The staging pipeline stops being representative. Run the same pipeline config across all environments; parameterize what needs to differ.
+
+---
+
+## Further reading: demonstration artifacts
+
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifact linked
+> here illustrates the technique; production-scale application of the same technique is
+> documented in [ORIGINS.md](../ORIGINS.md) where applicable.
+
+The artifacts below illustrate the techniques described in this guide against the demonstration sandbox. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the stack does, a `main` link is provided alongside.
+
+### On pipeline ownership and shared template configuration
+
+- **Monorepo and pipeline structure decision** — citation: [ADR-001: Monorepo Structure](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-001-monorepo-structure.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/adr/ADR-001-monorepo-structure.md). Records the Turborepo + npm workspaces decision. The `turbo.json` task graph is the mechanism by which a platform team defines the required pipeline steps — build dependencies, caching contracts, test ordering — that all application packages inherit. Demonstrates the shared-template ownership model: the platform team sets the structure; teams configure application-specific inputs and outputs within it.
+
+### On required gates and sequential environment promotion
+
+- **CI pipeline** — citation: [`.github/workflows/ci.yml` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/ci.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/ci.yml). The Lint & Test job runs `npx turbo run lint test` with Turborepo caching, enforces Prisma client generation, and validates the analytics taxonomy schema. All gates block the PR — they are not advisory. Demonstrates that the required-gate checklist from this guide translates to enforced pipeline steps, not just documentation.
+- **Deploy pipeline** — citation: [`.github/workflows/deploy.yml` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/deploy.yml). Multi-stage promotion: CI must pass before staging deploy runs; production deploy requires a manual approval gate. The deploy pipeline is the place where "environment promotion is sequential" becomes enforceable rather than advisory.
+
+### On secret management (OIDC over long-lived credentials)
+
+- **Workload Identity Federation** — citation: [`.github/workflows/deploy.yml` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml) (same artifact as above). The deploy pipeline uses GCP Workload Identity Federation (`GCP_STAGING_WORKLOAD_IDENTITY_PROVIDER`, `GCP_PROD_WORKLOAD_IDENTITY_PROVIDER`) rather than stored long-lived service account keys. Each pipeline run receives a short-lived credential federated from GitHub's OIDC token — illustrating the "OIDC over long-lived credentials" rule from this guide's Secret Management section in practice.
+
+---
+
+These artifacts are not exhaustive. Per [LINKING.md](../LINKING.md), additional cross-references are added only where they add evaluative power — not as breadth for its own sake.

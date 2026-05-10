@@ -122,3 +122,28 @@ the opening brief:
 
 For projects using CLAUDE.md, encode this as a standing instruction in the
 **Documentation and Citations** section so it applies automatically every session.
+
+---
+
+## Further reading: demonstration artifacts
+
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifact linked
+> here illustrates the technique; production-scale application of the same technique is
+> documented in [ORIGINS.md](../ORIGINS.md) where applicable.
+
+The artifacts below illustrate the techniques described in this document against the demonstration sandbox. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule.
+
+### On ADR citation practice
+
+- **Worked ADR with a full References section** — citation: [ADR-016: Cycle Planning Agent](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-016-cycle-planning-agent.md). A production ADR whose `## References` section demonstrates this document's citation requirements: the Anthropic Tool Use guide (for the technology chosen), the Anthropic Node SDK (for the integration library), the Hexagonal Architecture primary source (for the architectural pattern governing the port boundary), and prior ADRs in the same series (for internal cross-references). Each entry includes the one-sentence explanation of what decision it supports — the format this document prescribes for ADR References sections.
+
+### On AI attribution and workflow provenance
+
+- **Workflow-level attribution via `/propose`** — citation: [`.claude/propose.json` at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.claude/propose.json). The skill configuration file for the `/propose` command, which scaffolds proposals with AI assistance, creates linked GitHub issues, and adds ROADMAP entries. Every commit produced by this skill carries the `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` footer, implementing attribution at the workflow level rather than relying on per-session author discipline. This demonstrates the document's core premise: provenance is a workflow property, not a post-hoc annotation.
+
+**What is missing:** The repo does not yet have a `docs/adr-references.md` consolidated reference index (as this document recommends in the "Consolidated Reference Index" section). That is a candidate for a future round once the ADR series reaches the scale where per-domain grouping adds navigation value.
+
+---
+
+These artifacts are not exhaustive. Per [LINKING.md](../LINKING.md), additional cross-references are added only where they add evaluative power — not as breadth for its own sake.
