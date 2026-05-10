@@ -10,6 +10,13 @@ documentation, design documents, ADRs, playbooks, or technical recommendations
 
 These standards were developed from the Claude Code and Claude integration initiative at Community Tech Alliance (2025–2026). I designed the phased rollout plan with separate use cases for engineers and managers and developed a structured evaluation rubric for measuring impact. The auditability requirements here emerged from the recognition that AI-generated documentation lacks the same provenance chain as human-authored documentation — and that for regulated environments and portfolio-quality work, that gap needs to be closed explicitly.
 
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifacts linked
+> in the Further-reading section illustrate the citation, attribution, and authoring
+> discipline described here against a working AI-assisted codebase; production-scale
+> application of the same standards is documented in [ORIGINS.md](../ORIGINS.md) where
+> applicable.
+
 ---
 
 ## Core Principle: AI Recommendations Must Be Sourced
@@ -122,3 +129,26 @@ the opening brief:
 
 For projects using CLAUDE.md, encode this as a standing instruction in the
 **Documentation and Citations** section so it applies automatically every session.
+
+---
+
+## Further reading: demonstration artifacts
+
+The artifacts below illustrate the citation, attribution, and authoring discipline described in this playbook against the demonstration sandbox introduced after the Background section. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the codebase does, a `main` link is provided alongside.
+
+### On `## References` sections in ADRs
+
+- **ADR series with consistent References sections** — live state: [`docs/adr/`](https://github.com/brownm09/lifting-logbook/tree/main/docs/adr). Every ADR ends with a `## References` section linking to primary sources — official documentation, IETF RFCs, foundational books, and standards body specifications. The pattern is uniform across the series, which is the playbook's argument: citation hygiene must be a *convention*, not a per-document judgment call, or it decays.
+- **Worked example: ADR-018 (Observability Stack)** — citation: [`docs/adr/ADR-018-observability-stack.md` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-018-observability-stack.md). Cites OpenTelemetry specifications, Grafana Cloud product documentation, and the Honeycomb / Datadog vendor pages it explicitly considered against. Demonstrates the playbook's "technology choices link to official documentation" rule applied at a decision the ADR is making *right now*.
+- **Worked example: ADR-019 (SLO Methodology)** — citation: [`docs/adr/ADR-019-slo-methodology.md` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-019-slo-methodology.md). Cites the Google SRE Workbook chapter on burn-rate alerting as the methodological primary source. Demonstrates the playbook's "architectural patterns link to the original treatment, not a secondary summary" rule.
+
+### On AI provenance and attribution
+
+- **Co-authorship convention in commit history** — live state: [`git log` on `main`](https://github.com/brownm09/lifting-logbook/commits/main). Commits authored with AI assistance carry a `Co-Authored-By: Claude` trailer. Demonstrates the playbook's principle that AI-assisted authorship needs the same provenance chain as human authorship — the trailer is grep-able and survives squash-merge, so the contribution chain is reconstructable from history alone.
+- **Proposal scaffolding configuration** — live state: [`.claude/propose.json`](https://github.com/brownm09/lifting-logbook/blob/main/.claude/propose.json). Encodes the project's proposal taxonomy (milestones, epics, GitHub Project metadata) so the `/propose` skill produces structurally consistent proposal documents. Demonstrates the playbook's "encode as a standing instruction" recommendation: the configuration is read automatically every time the skill runs, eliminating per-session prompt drift.
+- **Project CLAUDE.md as the standing instruction surface** — live state: [`CLAUDE.md`](https://github.com/brownm09/lifting-logbook/blob/main/CLAUDE.md). Codifies the project-level documentation conventions Claude must follow on every session, including the citation requirements this playbook establishes.
+
+### What this sandbox does *not* demonstrate
+
+- **Compliance and regulatory citations** are absent because the project has no compliance posture — there is no GDPR / HIPAA / PCI footprint to require citations to primary regulatory sources. The technology, specification, and pattern citation discipline transfers; the regulatory citation discipline is only exercised in scopes where the rules actually bind.
+- **A consolidated reference index** (the `docs/adr-references.md` artifact recommended above) is not yet maintained. References live per-ADR; aggregating them across the series is a recognized gap.

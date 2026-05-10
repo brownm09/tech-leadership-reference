@@ -6,6 +6,12 @@
 
 This playbook defines how a PRD is structured, how it evolves over the life of a product, and what "done" means at each stage. It applies the continuous discovery model: the PRD tracks evolving product understanding rather than locking scope. One living PRD per product; version history is in git, not in a frozen "v1.3 Final (2)" document.
 
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifacts linked
+> in the Further-reading section illustrate the lifecycle described here at proposal-document
+> scale; production-scale application of the same model is documented in
+> [ORIGINS.md](../ORIGINS.md) where applicable.
+
 ---
 
 ## The One Living PRD Principle
@@ -159,7 +165,31 @@ This lifecycle model was developed from the feature lifecycle and roadmapping pr
 
 ---
 
-## References
+## Further reading: demonstration artifacts
+
+The artifacts below illustrate the lifecycle stages described in this playbook against the demonstration sandbox introduced after the Purpose section. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the project does, a `main` link is provided alongside.
+
+### On the lifecycle state machine (`draft → accepted → shipped`)
+
+- **Proposal lifecycle definition** — citation: [`docs/proposals/README.md` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/proposals/README.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/proposals/README.md). Defines the four-state lifecycle (`draft`, `accepted`, `shipped`, `declined`) used across every proposal in the directory. Demonstrates the playbook's claim that lifecycle stages must be *named* and *gated* — without explicit names, "in progress" silently absorbs both Alignment and Delivery and the gates between them get skipped.
+- **Proposal index** — live state: [`docs/proposals/`](https://github.com/brownm09/lifting-logbook/tree/main/docs/proposals). Each filename is dated and slugged; each file declares its current `Status`. The directory itself is the lifecycle dashboard — no separate tracking system, no "v1.3 Final (2)" naming pathology. This is the playbook's "version history is in git" principle applied concretely.
+
+### On the worked end-to-end example
+
+- **On-call readiness proposal** — citation: [`docs/proposals/2026-05-08-on-call-readiness.md` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/proposals/2026-05-08-on-call-readiness.md); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/docs/proposals/2026-05-08-on-call-readiness.md). Walks the full lifecycle in one document: Problem → Proposed Solution → Acceptance Criteria → Out of Scope → linked GitHub issue, with the status field updated as the work progresses. The "Milestone fit note" paragraph is the part most worth reading: it explicitly records *why* the work was placed in the milestone it was, anticipating the kind of question that gets asked six months later when no one remembers the original framing.
+
+### On ADRs as the append-only changelog companion
+
+- **ADR series** — live state: [`docs/adr/`](https://github.com/brownm09/lifting-logbook/tree/main/docs/adr). The proposal directory captures *what to build*; the ADR directory captures *why we built it the way we did*. Together they implement the playbook's separation of concerns: PRD/proposal answers "why and for whom"; ADRs answer architectural "how and at what trade-off." Notable: [ADR-019: SLO Methodology](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-019-slo-methodology.md) was written as part of the on-call-readiness proposal's acceptance criteria — the proposal explicitly required the methodology decision to be captured as an ADR before the work was considered shipped.
+
+### On the `/propose` skill (process automation)
+
+- **Proposal scaffolding configuration** — live state: [`.claude/propose.json`](https://github.com/brownm09/lifting-logbook/blob/main/.claude/propose.json). Encodes the proposal directory, the PRD location, the active milestones, and the epic taxonomy as machine-readable configuration. The `/propose` skill reads this to generate a proposal stub, file the linked GitHub issue with the right milestone and epic assignment, append a roadmap entry, and open a PR — automating the per-proposal mechanical work so the document author can focus on Sections 1–4. Demonstrates the playbook's principle that lifecycle discipline is best preserved by removing friction from following it.
+
+### What this sandbox does *not* demonstrate
+
+- **Personas and the job-outcome table** are minimally represented — the project has one user (the author), so Section 2 and Section 3 of the playbook collapse. The lifecycle structure transfers; the user-research discipline that animates Sections 1–3 in a real product context does not.
+- **Tier 1 / Tier 2 update process** does not appear, because the same person is PM and EM. The state-machine and changelog discipline transfers; the alignment process does not.
 
 - [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes, not to consume features. The job-outcome table format in §2 (job + "success looks like") is a direct application.
 - [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation that more personas typically indicate unclear product scope rather than genuine user diversity.

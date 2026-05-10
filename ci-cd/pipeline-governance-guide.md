@@ -10,6 +10,12 @@ This guide covers the decisions and controls that determine whether a CI/CD pipe
 
 A pipeline with no governance is a deployment mechanism. A pipeline with governance is part of the software supply chain, with accountability to match.
 
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The artifacts linked
+> in the Further-reading section illustrate the techniques described here; production-scale
+> application of the same techniques is documented in [ORIGINS.md](../ORIGINS.md) where
+> applicable.
+
 ## Background and Motivation
 
 This framework draws from two deployments:
@@ -129,3 +135,27 @@ Pipeline configuration is infrastructure. Treat it accordingly.
 **No rollback test:** Rollback procedures are defined but have not been executed since the pipeline was built. Test rollback before you need it.
 
 **Drift between environments:** Staging and production pipelines diverge over time because fixes go to production first and are not backported. The staging pipeline stops being representative. Run the same pipeline config across all environments; parameterize what needs to differ.
+
+---
+
+## Further reading: demonstration artifacts
+
+The artifacts below illustrate the techniques described in this guide against the demonstration sandbox introduced after the Purpose section. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the pipeline does, a `main` link is provided alongside.
+
+### On required gates and gate ordering
+
+- **CI workflow** — citation: [`.github/workflows/ci.yml` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/ci.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/ci.yml). Defines the build-stage gates: lint and test under Turborepo, an analytics-taxonomy validator that runs as a separate enforced step, and a parallel `db-integration` job that spins up Postgres as a service container so DB-touching tests run against a real engine rather than a mock. Demonstrates the guide's claim that gates are only meaningful if they actually block — every step here exits non-zero on failure and there is no `|| true` suppression.
+- **Deploy workflow** — citation: [`.github/workflows/deploy.yml` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/deploy.yml). Worked example of the sequential `terraform staging → build images → deploy staging → smoke test → manual approval → terraform production → deploy production` pipeline this guide describes. Notable: the `terraform plan` output is reviewed before apply; production is gated behind an explicit GitHub Environment approval; smoke tests run between staging deploy and the production gate.
+
+### On Turborepo task dependencies
+
+- **`turbo.json`** — citation: [`turbo.json` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/turbo.json); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/turbo.json). Encodes the build/test/lint dependency graph and input scoping that lets the CI run only the affected packages. The explicit `inputs` arrays for each task are the part most worth reading: they define what changes invalidate the cache, which is where most monorepo CI bugs originate.
+
+### On secret management and OIDC
+
+- **OIDC federation in deploy.yml** — citation: [`google-github-actions/auth@v2` step at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml). Demonstrates the guide's recommendation to prefer short-lived OIDC-issued credentials over long-lived service account keys: the workflow exchanges GitHub's OIDC token for GCP credentials per run via `workload_identity_provider` and `service_account` secrets. There are no long-lived GCP keys in repo or in GitHub secrets — only the WIF binding identifiers.
+
+### What is missing (honestly)
+
+- **Branch protection rules** are not visible from the repo. They are configured via GitHub's API/UI, not in committed YAML. The guide's "branch protection enforced" gate is a real requirement; it just cannot be inspected by reading the repo. To verify on a project of your own, query `gh api repos/{owner}/{repo}/branches/{branch}/protection`.
+- **No CI-specific ADR exists yet.** The pipeline's design decisions (Turborepo over alternatives, the `terraform plan → manual approval` sequencing, OIDC over keys) are not yet recorded as ADRs in `docs/adr/`. This is a gap relative to the standard the rest of the stack holds itself to.

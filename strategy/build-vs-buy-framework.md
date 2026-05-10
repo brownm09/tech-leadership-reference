@@ -14,6 +14,13 @@ This framework was developed from two high-stakes build-vs-buy decisions at ActB
 
 2. **Payment processor migration to Stripe (2022–2025):** I led the program and defined scope and sequencing. My team executed the migration. Outcome: 2,600+ entity accounts migrated; payments codebase shrunk by 7,000+ lines.
 
+> **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
+> is a personal-project monorepo, not a production system at scale. The single sandbox
+> citation in this playbook (footnote at Dimension 5) illustrates one worked decision
+> against the framework; production-scale application is documented in
+> [ORIGINS.md](../ORIGINS.md) where applicable. See [LINKING.md](../LINKING.md) for the
+> full convention.
+
 ---
 
 ## When to Use This
@@ -136,6 +143,8 @@ For buy and partner options: what is the risk profile of the vendor relationship
 | 1 | Severe lock-in; vendor is a single point of failure; migration would threaten business continuity; vendor financial stability is uncertain |
 
 **For build option:** Score this dimension based on the risk of depending on a key internal contributor — if one engineer owns the system, the lock-in risk is actually high. Score 5 if the system is well-documented, tested, and operationally understood by multiple engineers.
+
+For a worked example of an alternatives-considered analysis structured around exactly these dimensions — vendor lock-in tolerance, traffic-shape fit, and 5-year TCO — see the observability-stack ADR in the demonstration sandbox.[^bvb-sandbox-1]
 
 ---
 
@@ -399,3 +408,5 @@ If the regret score is high: document what data would have changed the decision 
 - Christensen, Clayton M. *The Innovator's Dilemma.* Harvard Business Review Press, 1997. The original framework for distinguishing core, differentiating capability from commodity capability — foundational to the strategic differentiation dimension.
 - Fowler, Martin. "Make or Buy?" *martinfowler.com*, 2018. https://martinfowler.com/bliki/MakeOrBuy.html. A concise primary-source treatment of the decision from an architecture perspective; covers the false binary and introduces the concept of integration as its own cost category.
 - CNCF. *Cloud Native Computing Foundation Landscape.* https://landscape.cncf.io/. The authoritative map of the open-source ecosystem for infrastructure and platform categories — essential reference when evaluating the partner option for DevOps and data platform decisions.
+
+[^bvb-sandbox-1]: [ADR-018: Observability Stack at `413f8a6`](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-018-observability-stack.md). The "Alternatives considered" section compares Honeycomb, Datadog, Grafana Cloud, and self-hosting on vendor lock-in tolerance, traffic-shape fit, and 5-year TCO — the same dimensions Sections "Total Cost of Ownership," "Integration Complexity," and "Vendor Risk and Lock-In" of this framework name. Useful as a concrete example of what the framework's analysis looks like when written out for a real decision, even though the decision context (a personal-project sandbox) differs from the org-scale decisions this framework is designed for.
