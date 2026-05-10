@@ -6,6 +6,15 @@ Operational and leadership frameworks from production engineering work across pa
 
 **[LINKING.md](LINKING.md)** documents the convention for cross-references to [lifting-logbook](https://github.com/brownm09/lifting-logbook) as a demonstration sandbox for frameworks where production experience is not the basis of the claim.
 
+## Transitions & New Leader Toolkit
+
+Frameworks for the first 90–360 days in a new engineering leadership role. Start here.
+
+**[transitions/new-leader-30-60-90.md](transitions/new-leader-30-60-90.md)**
+Phased framework for an engineering leader joining a new org. Covers the listening tour (days 1–30), diagnosis and early action (days 31–60), and committing to a direction (days 61–90). Includes a 90-180-360 extension for larger orgs or turnaround situations, anti-patterns, and reusable templates for the listening tour 1:1 and the 90-day written assessment. Grounded in the ActBlue platform directorate ramp and the CTA technical leadership onboarding.
+
+---
+
 ## Org Design & Strategy
 
 Frameworks for how a Director or Head of Engineering structures the organization, sets technical direction, and makes investment decisions.
@@ -25,17 +34,26 @@ Three-way decision framework (build / buy / partner) across five scored dimensio
 **[strategy/ma-technical-due-diligence.md](strategy/ma-technical-due-diligence.md)**
 Engineering assessment framework for acquisitions. Covers 8 domains (architecture, technical debt, security, team, operational maturity, data practices, IP/licensing, integration complexity) with artifacts to request, interview questions, and red/yellow flags per domain. Includes a 2-week diligence sprint structure and executive report format.
 
+**[strategy/technical-debt-prioritization.md](strategy/technical-debt-prioritization.md)**
+Framework for classifying, communicating, and sequencing technical debt work. Introduces a four-class model (load-bearing, risk, velocity, cosmetic) with guidance on translating each class into business language for roadmap conversations. Covers the debt inventory process, a 15–20% capacity reservation model, the refactor-alongside-feature pattern, and common failure modes including the infinite backlog and the big bang rewrite. Grounded in the PCI environment deprecation (30% codebase reduction, 7,000+ lines eliminated) and Heroku→Kubernetes migration at ActBlue.
+
 ---
 
 ## People Systems
 
-Frameworks for managing engineering talent: defining expectations clearly, running promotions fairly, and planning the headcount required to deliver on commitments.
+Frameworks for managing engineering talent: defining expectations clearly, running promotions fairly, having the difficult conversations, and planning the headcount required to deliver on commitments.
 
 **[people/career-ladder-calibration.md](people/career-ladder-calibration.md)**
 How to build or inherit a career ladder and run calibration. Covers IC vs. manager track design, a four-axis level definition format (impact scope, decision autonomy, execution, collaboration), full L3–Staff worked definitions, calibration session structure, the three failure modes (grade inflation, recency bias, proximity bias), and a documented appeals process.
 
 **[people/headcount-capacity-planning.md](people/headcount-capacity-planning.md)**
 How to model HC needs, build the finance ask, and sequence hiring against roadmap risk. Covers the four capacity inputs, initiative-level modeling with worked examples, the one-page HC request format, backfill vs. new headcount criteria, common planning errors, and a 12-month rolling model template.
+
+**[people/one-on-one-coaching-framework.md](people/one-on-one-coaching-framework.md)**
+How to run 1:1s as a coaching instrument, not a status meeting. Covers agenda structure, note-taking discipline, and the coaching arc across four career stages: new hire, growing IC, senior/leveling out, and manager development. Includes the growth conversation framework, promotion readiness conversations, stretch assignment mechanics, the SBI feedback model, and the questions engineers won't raise unless asked directly. Grounded in three promoted engineers over three years, including two double-jump promotions.
+
+**[people/difficult-conversations-framework.md](people/difficult-conversations-framework.md)**
+How to prepare for and deliver the four most common difficult conversations in engineering management: underperformance (early-signal and pre-formal), role mismatch, team conflict, and leveling disagreements. Covers SBI structure, pre-conversation preparation, follow-through cadence, documentation discipline, and when to escalate to HR. Grounded in calibration advocacy and leveling dispute conversations at ActBlue.
 
 ---
 
@@ -57,6 +75,9 @@ How engineering works with product, design, legal, finance, and sales. Covers de
 
 **[operating-cadence/escalation-framework.md](operating-cadence/escalation-framework.md)**
 When and how to escalate issues at the leadership layer (distinct from on-call escalation). Covers the three trigger categories (delivery risk, people risk, reputational/external risk), four escalation levels with response SLAs, the 5-sentence escalation memo format, and anti-patterns.
+
+**[operating-cadence/managing-up-across-playbook.md](operating-cadence/managing-up-across-playbook.md)**
+The mechanics of managing up (exec relationships, skip-level dynamics, absorb vs. escalate decisions, protecting team capacity) and managing across (peer manager relationships, cross-functional partnership with product/legal/finance, dependency navigation). Covers the trust account model, framing trade-offs for executive audiences, and when to escalate a cross-team issue vs. resolve it directly. Grounded in the PCI environment deprecation program, VP Engineering roadmap presentations, and sustained finance/legal alignment at ActBlue.
 
 ---
 
