@@ -1,6 +1,6 @@
 # Origins — Where These Frameworks Come From
 
-Every framework in this repo was developed from real work, not synthesized from best practices. This document traces each framework back to the specific engagement, problem, and outcome that produced it, and provides first-person framing that grounds each framework as lived experience.
+Every framework in this repo was developed from real work, not synthesized from best practices. This document traces each playbook back to the specific engagement, problem, and outcome that produced it, and provides first-person framing that grounds each framework as lived experience.
 
 **Columns:**
 - **Engagement** — employer and timeframe
