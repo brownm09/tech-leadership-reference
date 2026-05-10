@@ -8,7 +8,7 @@ The business outcome is straightforward: equitable promotion decisions reduce re
 
 ## Background and Motivation
 
-This playbook was developed from the talent development work at ActBlue Technical Services (2022–2025). I drove three engineer promotions within three years through deliberate project placement, calibration preparation, and sustained advocacy — two from SE2 to SSE2 (a double promotion) and one from SSE to SSE2. I also founded and ran the Engineering Management Community of Practice, which systematized calibration coaching, talent development, and recruiting partnership across the manager group.
+This playbook was developed from the talent development work at ActBlue Technical Services (2022–2025). I drove five engineer promotions across three engineers within three years through deliberate project placement, calibration preparation, and sustained advocacy — two engineers who advanced from SE2 to SSE2 through back-to-back promotions (SE2→SSE1→SSE2), and one from SSE1 to SSE2. I also founded and ran the Engineering Management Community of Practice, which systematized calibration coaching, talent development, and recruiting partnership across the manager group.
 
 ## When to Use This
 
