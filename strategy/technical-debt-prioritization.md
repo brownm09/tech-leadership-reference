@@ -8,7 +8,7 @@ Leaders who treat debt as a single category make two predictable errors: they ei
 
 ## Background and Motivation
 
-This framework was developed from two specific programs at ActBlue Technical Services (2022–2025). The first was a multi-year PCI environment deprecation initiative that reduced the active codebase by approximately 30% — 7,000+ lines of code eliminated and 2,600+ accounts migrated — while maintaining payment continuity on a system handling 1M+ transactions per day. The second was an infrastructure migration from Heroku to Kubernetes that reduced infrastructure costs by approximately $64,000 per year. Both programs required arguing for and winning dedicated engineering time against competing feature roadmap priorities, and both required translating technical risk into the language that finance, product, and legal leadership could evaluate.
+This framework was developed from two specific programs at ActBlue Technical Services (2022–2025). The first was a multi-year PCI environment deprecation initiative that reduced the PCI-scoped service codebase by approximately 30% — 7,000+ lines of code eliminated and 2,600+ accounts migrated — while maintaining payment continuity on a system handling 1M+ transactions per day. The second was an infrastructure migration from Heroku to Kubernetes that reduced infrastructure costs by approximately $64,000 per year. Both programs required arguing for and winning dedicated engineering time against competing feature roadmap priorities, and both required translating technical risk into the language that finance, product, and legal leadership could evaluate.
 
 The core insight from both: debt that cannot be described in business terms will not be prioritized in business planning. The classification framework exists to make that translation possible.
 
@@ -110,7 +110,7 @@ A roadmap entry for debt work should include:
 
 The most common failure mode in debt remediation is treating it as a separate work stream from feature delivery. In practice, the teams doing the debt work are the same teams doing the feature work, and the sequencing has to account for both.
 
-A sustainable model: reserve 15–20% of sprint capacity for Class 1 and Class 2 debt work, every sprint. This is not a separate track — it is a capacity reservation. The specific items change quarter to quarter based on the debt register; the capacity reservation is constant. This approach produces steady debt reduction without requiring dedicated cleanup sprints, which are difficult to get and difficult to sustain.
+A sustainable model: reserve 15–20% of sprint capacity for Class 1 and Class 2 debt work, every sprint. (This range is calibrated to mid-size product engineering teams; tune it against your team's actual risk register and delivery pressures — smaller teams often need proportionally more headroom, larger orgs with dedicated platform capacity may carry less.) This is not a separate track — it is a capacity reservation. The specific items change quarter to quarter based on the debt register; the capacity reservation is constant. This approach produces steady debt reduction without requiring dedicated cleanup sprints, which are difficult to get and difficult to sustain.
 
 The capacity reservation has to be explicit and defended. "We have 20% reserved for debt" needs to be in the team's working agreements, communicated to product, and visible in sprint planning. If it is implicit, it will be the first thing compressed when delivery pressure increases.
 

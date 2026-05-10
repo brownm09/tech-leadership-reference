@@ -8,7 +8,7 @@ Operational and leadership frameworks from production engineering work across pa
 
 ## Transitions & New Leader Toolkit
 
-Frameworks for the first 90–360 days in a new engineering leadership role. Start here.
+Frameworks for the first 90–360 days in a new engineering leadership role. Start here. (Additional docs — inheriting a team, reorg execution — are forthcoming in wave 2.)
 
 **[transitions/new-leader-30-60-90.md](transitions/new-leader-30-60-90.md)**
 Phased framework for an engineering leader joining a new org. Covers the listening tour (days 1–30), diagnosis and early action (days 31–60), and committing to a direction (days 61–90). Includes a 90-180-360 extension for larger orgs or turnaround situations, anti-patterns, and reusable templates for the listening tour 1:1 and the 90-day written assessment. Grounded in the ActBlue platform directorate ramp and the CTA technical leadership onboarding.
@@ -50,7 +50,7 @@ How to build or inherit a career ladder and run calibration. Covers IC vs. manag
 How to model HC needs, build the finance ask, and sequence hiring against roadmap risk. Covers the four capacity inputs, initiative-level modeling with worked examples, the one-page HC request format, backfill vs. new headcount criteria, common planning errors, and a 12-month rolling model template.
 
 **[people/one-on-one-coaching-framework.md](people/one-on-one-coaching-framework.md)**
-How to run 1:1s as a coaching instrument, not a status meeting. Covers agenda structure, note-taking discipline, and the coaching arc across four career stages: new hire, growing IC, senior/leveling out, and manager development. Includes the growth conversation framework, promotion readiness conversations, stretch assignment mechanics, the SBI feedback model, and the questions engineers won't raise unless asked directly. Grounded in three promoted engineers over three years, including two double-jump promotions.
+How to run 1:1s as a coaching instrument, not a status meeting. Covers agenda structure, note-taking discipline, and the coaching arc across four career stages: new hire, growing IC, senior/leveling out, and manager development. Includes the growth conversation framework, promotion readiness conversations, stretch assignment mechanics, the SBI feedback model, and the questions engineers won't raise unless asked directly. Grounded in five promotions across three engineers over three years.
 
 **[people/difficult-conversations-framework.md](people/difficult-conversations-framework.md)**
 How to prepare for and deliver the four most common difficult conversations in engineering management: underperformance (early-signal and pre-formal), role mismatch, team conflict, and leveling disagreements. Covers SBI structure, pre-conversation preparation, follow-through cadence, documentation discipline, and when to escalate to HR. Grounded in calibration advocacy and leveling dispute conversations at ActBlue.

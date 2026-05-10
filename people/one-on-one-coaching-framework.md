@@ -4,7 +4,7 @@
 
 The 1:1 is the primary instrument of engineering management. Everything else — performance reviews, promotion calibration, team culture — is downstream of what happens in this meeting. A 1:1 that is used as a status update is an opportunity wasted. A 1:1 where the manager does most of the talking is not a 1:1 — it is a monologue. Done well, the weekly 1:1 is the mechanism through which you understand what is actually blocking an engineer, build the trust needed to give and receive difficult feedback, and create the growth conditions that lead to promotion, retention, and a team that can execute without you.
 
-This framework covers format, cadence, and the coaching arc across career stages. It is grounded in a practice of three promoted engineers over three years — two SE2→SSE2 double-jumps and one SSE→SSE2 — where the 1:1 was the primary vehicle for growth visibility, stretch assignment identification, and calibration preparation.
+This framework covers format, cadence, and the coaching arc across career stages. It is grounded in five promotions across three engineers over three years — two who advanced from SE2 to SSE2 through back-to-back promotions (SE2→SSE1→SSE2), and one from SSE1 to SSE2 — where the 1:1 was the primary vehicle for growth visibility, stretch assignment identification, and calibration preparation.
 
 ## Background and Motivation
 
@@ -85,7 +85,7 @@ If you have managers reporting to you, the 1:1 format shifts. Your job is no lon
 Focus areas:
 - **Their team's health, not just their team's output.** Is the on-call load distributed fairly? Are there performance situations being avoided? Is there a high performer at flight risk?
 - **Their growth as a manager.** Where is their practice strong? Where is it uneven? Give them the same behavior-specific feedback you give engineers, applied to management behaviors.
-- **Calibration support.** Before a calibration cycle, align with each manager on the evidence for their team members who are being discussed. Do not let calibration be the first time you understand their read on an engineer.
+- **Calibration support.** Before a calibration cycle, align with each manager on the evidence for their team members who are being discussed. Do not let calibration be the first time you understand their read on an engineer. For the full calibration session structure and level definition framework that backs these conversations, see [career-ladder-calibration.md](career-ladder-calibration.md).
 
 ---
 
@@ -134,6 +134,8 @@ Feedback without specificity is noise. The SBI framework makes feedback actionab
 Example: "In last week's sprint planning [situation], you pushed back on the scope reduction without offering an alternative [behavior]. It put [product manager] in the position of having to defend a decision with no room to negotiate, and she came to me to ask whether you were aligned with the roadmap [impact]. I want to talk about how we can give you more of a voice in planning in a way that doesn't put her on the defensive."
 
 This is different from: "You can come across as difficult in planning meetings." That observation is not actionable and invites defensiveness.
+
+SBI is also the structure for difficult conversations when the early-signal approach here is not resolving a situation — see the [Difficult Conversations Framework](difficult-conversations-framework.md) for underperformance, role mismatch, team conflict, and leveling disagreements.
 
 ### Feedback Cadence
 

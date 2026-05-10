@@ -8,7 +8,7 @@ Both relationships are skills. They have mechanics, failure modes, and a practic
 
 ## Background and Motivation
 
-This framework was developed from the cross-functional program work at ActBlue Technical Services (2022–2025), where I owned a multi-year PCI environment deprecation program that required sustained alignment across engineering, legal, finance, product, and account operations — and simultaneous management of a platform directorate with six teams and approximately fifty engineers. The challenges of managing up (maintaining executive visibility and trust through a multi-year program with shifting compliance deadlines) and across (coordinating four to five engineering teams, external audit timelines, and non-technical stakeholders with different incentives) were parallel and interdependent. Mismanaging either created cascading problems in the other.
+This framework was developed from the cross-functional program work at ActBlue Technical Services (2022–2025), where I owned a multi-year PCI environment deprecation program that required sustained alignment across engineering, legal, finance, product, and account operations — and simultaneous management of a platform directorate with six teams and approximately fifty engineers. The challenges of managing up (maintaining executive visibility and trust through a multi-year program with shifting compliance deadlines) and across (coordinating four to five of those teams on the PCI program directly, along with external audit timelines and non-technical stakeholders with different incentives) were parallel and interdependent. Mismanaging either created cascading problems in the other.
 
 ---
 
@@ -29,6 +29,8 @@ Three practices that build exec relationships reliably:
 1. **Lead with the conclusion.** Executives do not have time to reconstruct your reasoning. State the conclusion first, then offer the reasoning. "We should delay the migration by one quarter. Here's why: [two sentences]." Not: "So I've been looking at the migration timeline and there are a few factors to consider..."
 
 2. **Name trade-offs, not problems.** A problem requires someone else to solve it. A trade-off requires a decision. "The payment processor migration is on track, but accelerating it to meet Q2 creates risk to the fraud detection refactor in the same sprint. I can handle either, but not both at the original timeline. Which do you want me to protect?" This frames you as the person managing the tension, not surfacing it.
+
+   In practice: during the PCI deprecation at ActBlue, an external compliance deadline shifted six weeks mid-program. The framing to the VP of Engineering was not "the timeline changed" — it was: "We can hit the new compliance date, but it means the payment processor integration slips to Q3. The compliance date is non-negotiable from a regulatory standpoint; the integration date is a business decision. Which risk do you want me to protect?" That framing put the decision in the right hands and produced a resolution in the same conversation.
 
 3. **Give them something to say.** Your skip will talk about your team's work in contexts you are not in. Give them the two or three talking points that make your team's work legible to that audience. If they have to reconstruct your team's value proposition from memory, the version they communicate will not be the version you would choose.
 
@@ -103,6 +105,8 @@ Legal and compliance are often treated as obstacles. They are more accurately de
 The key insight: legal and compliance teams almost always have a workable path — they just need to understand what you are trying to do and why before they can help you find it. Going to them with a completed design and asking for approval is a losing approach. Going to them at the problem statement stage and asking "what constraints should we design around?" produces a very different conversation.
 
 For compliance-adjacent programs (PCI, GDPR, SOC 2): own the relationship, not just the deliverables. Know your compliance lead by name. Know their concerns and timeline pressures. When the audit is approaching, they should be calling you, not the other way around.
+
+In practice: during the PCI deprecation at ActBlue, rather than arriving at the compliance team with a completed scope reduction design and asking for sign-off, the conversation started with: "We are planning to decommission the legacy cardholder data environment. What constraints do we need to design around?" That question produced a requirement about data retention timing that would have required costly late-stage rework if surfaced at the approval stage instead of the design stage.
 
 ### Cross-Functional Partnership: Finance
 

@@ -36,6 +36,8 @@ Example: "In the all-hands on Thursday [situation], you responded to [product ma
 
 The SBI structure makes it harder to argue with the observation and easier to focus the conversation on the impact and the path forward.
 
+SBI is also the feedback model used in regular 1:1s — see the [1:1 Coaching Framework](one-on-one-coaching-framework.md) for how it integrates into the weekly feedback cadence rather than high-stakes conversations only.
+
 ### When Not to Have the Conversation
 
 **Do not have a difficult conversation:**
@@ -98,6 +100,8 @@ Team conflict between two engineers, or between an engineer and another team, is
 - Treating the conversation as the end. A behavioral agreement reached in one conversation needs follow-through — check in on whether the agreement is holding.
 
 ### Leveling Disagreements / Calibration
+
+The calibration session structure, level definition format, and failure modes (grade inflation, recency bias, proximity bias) are covered in [career-ladder-calibration.md](career-ladder-calibration.md). This section covers the conversation practice that operates within that process.
 
 Leveling disagreements are difficult because they combine two elements that rarely go well together: a consequential decision (compensation, title, promotion) and a subjective assessment that the person being assessed almost always sees differently than the assessor.
 
