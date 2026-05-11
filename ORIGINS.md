@@ -10,6 +10,16 @@ Every framework in this repo was developed from real work, not synthesized from 
 
 ---
 
+## Transitions & New Leader Toolkit
+
+| Framework | Engagement | Origin | Outcome | In my own words |
+|---|---|---|---|---|
+| [New Engineering Leader 30-60-90 Day Plan](transitions/new-leader-30-60-90.md) | ActBlue Technical Services (2022) → Community Tech Alliance (2025) | Platform directorate onboarding (6 teams, ~50 engineers); CTA technical leadership ramp | Listening tour and landscape doc completed in both contexts; early structural changes sequenced correctly | "I developed this framework from two meaningfully different leadership transitions — inheriting an established directorate at ActBlue and onboarding into a greenfield context at CTA." |
+| [Inheriting a Team You Didn't Hire](transitions/inheriting-a-team.md) | ActBlue Technical Services (2022) | Platform directorate formation — inheriting teams from prior reporting structure with different norms, informal authority, and unresolved personnel situations | Loyalty traps identified and navigated; informal authority figures engaged productively; early personnel concerns addressed with appropriate timeline | "I stepped into a directorate with existing team culture, informal leaders, and open personnel questions. The framework reflects what I learned about reading those dynamics before acting on them." |
+| [New Hire Onboarding Framework](transitions/new-hire-onboarding-framework.md) | ActBlue Technical Services (2022–2025) → Community Tech Alliance (2025–2026) | Onboarding multiple ICs across six platform teams at ActBlue; establishing onboarding structure from scratch at CTA | Reduced time-to-first-contribution variance across platform teams; created structured ramp where none existed at CTA | "I designed and ran onboarding across six platform teams and observed the failure modes that emerge when it is not structured. The CTA context required building the process with almost no existing scaffolding." |
+
+---
+
 ## Org Design & Strategy
 
 | Framework | Engagement | Origin | Outcome | In my own words |
@@ -19,6 +29,7 @@ Every framework in this repo was developed from real work, not synthesized from 
 | [Technical Strategy Template](strategy/technical-strategy-template.md) | ActBlue Technical Services (2024–2025) → Community Tech Alliance (2025–2026) | Multi-year platform directorate technical vision (ActBlue); 12-month technical investment roadmap (CTA) | Set direction for 6-team directorate; at CTA, prioritized DR posture and dependency management | "I developed the vision and presented roadmaps to the VP of Engineering and Head of Product. At CTA I designed and wrote the roadmap entirely." |
 | [Build vs. Buy Framework](strategy/build-vs-buy-framework.md) | ActBlue Technical Services (2022–2025) | Heroku→Kubernetes on AWS migration decision; payment processor migration to Stripe | $64K/year infrastructure savings (K8s); 2,600+ accounts migrated; 7,000+ lines of code removed (Stripe) | "I identified the priority, built the business case, and cleared the organizational path for both programs." |
 | [M&A Technical Due Diligence Framework](strategy/ma-technical-due-diligence.md) | ActBlue Technical Services (2022–2025) | Synthesized from PCI environment deprecation, multi-regional infrastructure, monolith decomposition, and DR validation | N/A — framework synthesized from cross-domain platform and compliance experience | "This framework synthesizes the diligence posture developed across multi-year platform, compliance, and DR programs in regulated environments." |
+| [Reorg Execution Guide](org-design/reorg-execution-guide.md) | ActBlue Technical Services (2022) | Platform directorate formation — chartering new teams, realigning reporting structures, and managing the human dynamics of structural change across ~50 engineers | New team charters established; reporting lines transitioned; team norms re-established in reconfigured structures | "I executed the platform directorate formation — the pre-announcement sequencing, the manager briefings, and the post-announcement norm re-establishment across six teams." |
 
 ---
 
@@ -28,6 +39,8 @@ Every framework in this repo was developed from real work, not synthesized from 
 |---|---|---|---|---|
 | [Career Ladder and Calibration Playbook](people/career-ladder-calibration.md) | ActBlue Technical Services (2022–2025) | Three IC promotions in three years; Engineering Management Community of Practice | Two SE2→SSE2 double promotions; one SSE→SSE2 promotion; CoP systematized talent development | "I drove three promotions within three years through deliberate project placement, calibration preparation, and sustained advocacy. Two were double promotions from SE2 to SSE2." |
 | [Headcount and Capacity Planning Playbook](people/headcount-capacity-planning.md) | ActBlue Technical Services (2024–2025) | HC modeling for a multi-year 6-team platform directorate | HC sequenced against roadmap; finance alignment achieved across two planning cycles | "I developed the platform directorate technical vision and translated it into headcount requirements across 6 teams, presenting to the VP of Engineering and Head of Product." |
+| [Hiring and Technical Interview Design](people/hiring-and-interview-design.md) | ActBlue Technical Services (2022–2025) | Interview loop design and calibration across platform engineering, payments, and EM roles; Engineering Management Community of Practice interview calibration sessions | Structured loops for three distinct hiring domains; interviewer calibration sessions systematized within the EM CoP | "I designed and calibrated interview loops for three distinct hiring domains and ran calibration sessions as part of the Engineering Management Community of Practice." |
+| [Staff and Principal Engineer Partnership](people/staff-engineer-partnership.md) | ActBlue Technical Services (2022–2025) | Staff IC partnerships in database engineering, DevEx, and payments architecture — each with different authority scope, roadmap co-ownership needs, and career stage | Effective technical roadmap co-ownership across three Staff-level partnerships; authority split explicit in each domain | "I managed Staff and Principal ICs across three distinct domains. The authority split, roadmap co-ownership model, and sponsor/coach/peer modes in this framework come from those partnerships." |
 
 ---
 
@@ -63,6 +76,7 @@ Every framework in this repo was developed from real work, not synthesized from 
 | [DR Fire Drill Template](disaster-recovery/fire-drill-template.md) | ActBlue Technical Services (2022–2024) | Disaster recovery fire drills introduced to validate payment continuity under failure scenarios | Improved incident preparedness; DR posture validated before a real event | "I designed the fire drill structure and ran the drills." |
 | [CI/CD Pipeline Governance Guide](ci-cd/pipeline-governance-guide.md) | Capital One (2019–2022) → ActBlue Technical Services (2022–2024) | CI/CD pipeline standardization across multiple engineering departments (Capital One); DevEx team ownership of application-level delivery tooling (ActBlue) | Saved 300 engineering hours per team (Capital One); application-level delivery tooling owned and governed (ActBlue) | "I led the migration planning at Capital One. At ActBlue, I chartered the DevEx team that owned application-level CI/CD." |
 | [LaunchDarkly Rollout Governance](experimentation/launchdarkly-rollout-governance.md) | ActBlue Technical Services (2022–2024) | End-to-end LaunchDarkly rollout: vendor relationship, proof-of-concept, cross-team adoption | First customer-facing flag in production within 4 months; several teams adopted | "I managed the vendor relationship, designed the proof-of-concept, and drove cross-team adoption." |
+| [Blameless Post-Mortem Framework](incident-management/blameless-postmortem-framework.md) | ActBlue Technical Services (2022–2025) | Post-mortem culture for high-availability payments infrastructure under PCI-DSS; SRE restructuring included post-mortem process redesign | Blameless analysis culture established; action item follow-through improved via ticket integration | "I was responsible for post-mortem culture across the platform directorate. The facilitation techniques and action item tracking approach here are what made the difference between post-mortems that changed things and those that didn't." |
 
 ---
 
@@ -88,6 +102,7 @@ Every framework in this repo was developed from real work, not synthesized from 
 |---|---|---|---|---|
 | [AI-Assisted Documentation Standards](leadership/ai-documentation-standards.md) | Community Tech Alliance (2025–2026) | Claude Code + Claude integration initiative — auditability standards for AI-generated documentation | Framework designed; did not advance to implementation before departure | "I designed the initiative and the sequencing, including separate use cases for engineers and managers and a structured evaluation rubric." |
 | [PRD Lifecycle Management](leadership/prd-lifecycle.md) | Community Tech Alliance (2025–2026) | Feature lifecycle and roadmapping process revision | Reduced planning debt; improved IC alignment; shifted emphasis to outcomes | "I designed and drove the process changes. The team adopted them." |
+| [RFC and Design Doc Process](leadership/rfc-design-doc-process.md) | ActBlue Technical Services (2022–2025) → Community Tech Alliance (2025–2026) | Architectural decision-making structure for Stripe migration, K8s migration, and PCI deprecation (ActBlue); lightweight RFC process establishment in a team with no prior structured decision process (CTA) | Cross-team alignment on major architectural decisions maintained across multi-year programs; RFC process adopted at CTA | "I used structured proposal and review processes for major architectural decisions at ActBlue. At CTA, I established the process from scratch in a team that had been deciding in Slack." |
 
 ---
 

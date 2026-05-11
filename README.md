@@ -8,10 +8,16 @@ Operational and leadership frameworks from production engineering work across pa
 
 ## Transitions & New Leader Toolkit
 
-Frameworks for the first 90–360 days in a new engineering leadership role. Start here. (Additional docs — inheriting a team, reorg execution — are forthcoming in wave 2.)
+Frameworks for the first 90–360 days in a new engineering leadership role, and the full engineer lifecycle from first day to fully ramped.
 
 **[transitions/new-leader-30-60-90.md](transitions/new-leader-30-60-90.md)**
 Phased framework for an engineering leader joining a new org. Covers the listening tour (days 1–30), diagnosis and early action (days 31–60), and committing to a direction (days 61–90). Includes a 90-180-360 extension for larger orgs or turnaround situations, anti-patterns, and reusable templates for the listening tour 1:1 and the 90-day written assessment. Grounded in the ActBlue platform directorate ramp and the CTA technical leadership onboarding.
+
+**[transitions/inheriting-a-team.md](transitions/inheriting-a-team.md)**
+Companion to the 30-60-90 for the specific dynamics of stepping into an existing team you did not hire. Covers the three predecessor archetypes (beloved, embattled, absent), loyalty traps (passed-over team members, informal authority figures), the trust signals the team is watching for in weeks 1–4, and early personnel decisions. Includes modified listening tour questions and a personnel decision decision tree.
+
+**[transitions/new-hire-onboarding-framework.md](transitions/new-hire-onboarding-framework.md)**
+The 30-day plan handed to an incoming engineer — the complement to the new-leader 30-60-90. Covers the three-phase ramp (orientation, first contribution, independent delivery), the three roles (manager, buddy, new hire), ramp metrics, and the most common onboarding failure modes. Includes a 30-day checklist, manager kick-off agenda, buddy guide, and 30-day retrospective format. Grounded in onboarding across six platform teams at ActBlue and the CTA engineering team.
 
 ---
 
@@ -37,6 +43,9 @@ Engineering assessment framework for acquisitions. Covers 8 domains (architectur
 **[strategy/technical-debt-prioritization.md](strategy/technical-debt-prioritization.md)**
 Framework for classifying, communicating, and sequencing technical debt work. Introduces a four-class model (load-bearing, risk, velocity, cosmetic) with guidance on translating each class into business language for roadmap conversations. Covers the debt inventory process, a 15–20% capacity reservation model, the refactor-alongside-feature pattern, and common failure modes including the infinite backlog and the big bang rewrite. Grounded in the PCI environment deprecation (30% codebase reduction, 7,000+ lines eliminated) and Heroku→Kubernetes migration at ActBlue.
 
+**[org-design/reorg-execution-guide.md](org-design/reorg-execution-guide.md)**
+Companion to the team topology framework: the *how* of reorgs rather than the *why*. Covers the pre-announcement checklist (HR alignment, manager briefing sequence), the announcement structure (what to say, what not to say, the five questions to answer), the 72-hour period after announcement, and re-establishing team norms in the new structure. Includes announcement templates, manager briefing agenda, team charter kickoff, and re-norming retro format. Grounded in the platform directorate formation at ActBlue (2022).
+
 ---
 
 ## People Systems
@@ -54,6 +63,12 @@ How to run 1:1s as a coaching instrument, not a status meeting. Covers agenda st
 
 **[people/difficult-conversations-framework.md](people/difficult-conversations-framework.md)**
 How to prepare for and deliver the four most common difficult conversations in engineering management: underperformance (early-signal and pre-formal), role mismatch, team conflict, and leveling disagreements. Covers SBI structure, pre-conversation preparation, follow-through cadence, documentation discipline, and when to escalate to HR. Grounded in calibration advocacy and leveling dispute conversations at ActBlue.
+
+**[people/hiring-and-interview-design.md](people/hiring-and-interview-design.md)**
+End-to-end structured hiring process from job spec design through debrief. Covers panel composition principles, a four-axis competency rubric (technical depth, collaboration, communication, growth), rubric calibration sessions, bias mitigation mechanisms (standardized questions, written notes before discussion, score submission before debrief), and debrief facilitation for signal-based rather than gut-based consensus. Includes job spec template, scorecard, debrief agenda, and offer-stage checklist. Grounded in hiring across platform, payments, and engineering management roles at ActBlue.
+
+**[people/staff-engineer-partnership.md](people/staff-engineer-partnership.md)**
+How managers and Staff or Principal ICs divide technical authority and co-own technical direction. Covers the authority split (what belongs to the manager, what belongs to the IC, the shared overlap zone), the sponsor/coach/peer distinction at different career stages, co-owning the technical roadmap, career pathing for the Staff track (team vs. org vs. company scope), and the failure modes when the partnership breaks. Includes a Staff partnership charter and a career conversation guide for the Staff track.
 
 ---
 
@@ -109,6 +124,9 @@ Frameworks for running reliable engineering operations: on-call structure, incid
 **[incident-management/on-call-restructuring-framework.md](incident-management/on-call-restructuring-framework.md)**
 Framework for restructuring an on-call program that has outgrown its original design. Covers the IC/responder split, rotation structure, Wed-Wed cadence, metrics instrumentation via Jeli and Jira, and the rollout approach. Based on a restructuring that expanded the on-call program from a 5-person SRE team absorbing everything to per-team responder rotations backed by a 12-person incident commander rotation.
 
+**[incident-management/blameless-postmortem-framework.md](incident-management/blameless-postmortem-framework.md)**
+The artifact produced after a real incident — distinct from the DR fire drill template. Covers the five-part post-mortem document (incident summary, impact assessment, incident timeline, root cause analysis using 5-why and contributing factors, action items), blameless facilitation techniques, and the action item tracking problem. Includes a post-mortem document skeleton, facilitator opening statement, AI tracking table format, and a post-mortem-lite variant for near-misses. Grounded in incident response operations for high-availability payments infrastructure at ActBlue.
+
 **[disaster-recovery/fire-drill-template.md](disaster-recovery/fire-drill-template.md)**
 Tabletop exercise format for stress-testing DR posture and incident management protocols. Covers scenario sequencing (catastrophic failure first), participant structure, pre/post checklists, and what to watch for. Built from exercises run at ActBlue to validate payment continuity under failure scenarios.
 
@@ -143,6 +161,9 @@ Auditability and verifiability standards for AI-generated architectural document
 
 **[leadership/prd-lifecycle.md](leadership/prd-lifecycle.md)**
 One living PRD per product. Covers PRD structure (job-outcome table, personas, hypothesis and bets, append-only changelog), two-tier update process (minor vs. major changes), lifecycle stages with gates (Discovery → Alignment → Delivery → Shipped), ownership model, and common failure modes including the frozen PRD, PRD-as-contract, and solution PRD anti-patterns.
+
+**[leadership/rfc-design-doc-process.md](leadership/rfc-design-doc-process.md)**
+How technical decisions get proposed, reviewed, and recorded at the team or org level. Covers when an RFC is warranted (scope, reversibility, blast radius thresholds), the full RFC lifecycle (draft → open for comment → decision → ADR), review mechanics (blocking authority vs. advisory voice, async vs. sync review), and the RFC-to-ADR relationship. Includes RFC document skeleton, reviewer guidance card, and decision-record footer block. Complements the ADR convention established in dev-env.
 
 ---
 
