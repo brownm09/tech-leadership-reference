@@ -4,7 +4,7 @@
 
 Hiring is the highest-leverage people decision an engineering leader makes. A promotion affects one career. A hire affects the team's culture, capability, and capacity for the next two to four years — longer if the hire becomes a senior IC or manager. Yet most engineering interview processes are designed by accident: a standard take-home problem inherited from a prior loop, a panel assembled by availability, and a debrief that surfaces the hiring manager's gut feelings dressed in technical language.
 
-The structural failure of accidental interview processes is that they optimize for pattern-matching against the interviewers rather than against the role. A panel of engineers who all came from similar backgrounds, companies, or problem domains will consistently prefer candidates who look like them — not because they are biased in the colloquial sense, but because their calibration anchors are skewed. Structured hiring design is not primarily about fairness, though fairness is a real benefit. It is about signal quality. A structured process produces more accurate predictions of job performance than an unstructured one, because it forces the signal to be role-relevant rather than interviewer-convenient.
+The structural failure of accidental interview processes is that they optimize for pattern-matching against the interviewers rather than against the role. A panel of engineers who all came from similar backgrounds, companies, or problem domains will consistently prefer candidates who look like them — not because they are biased in the colloquial sense, but because their calibration anchors are skewed. Structured hiring design is not primarily about fairness, though fairness is a real benefit. It is about signal quality. A structured process produces more accurate predictions of job performance than an unstructured one, because it forces the signal to be role-relevant rather than interviewer-convenient.[^1]
 
 This framework covers the full hiring loop from job spec to offer, with emphasis on panel design, rubric calibration, and the debrief — the three moments where structured design produces the most measurable improvement.
 
@@ -141,7 +141,7 @@ Structured process is the primary bias mitigation mechanism — not training, no
 
 **Standardized questions.** Every candidate is asked the same core questions in the same order by each interviewer. Variation from the standard question set should be noted in the debrief.
 
-**Written notes before discussion.** Every interviewer records their scores and evidence in writing before the debrief begins. Research consistently shows that oral-first debriefs produce anchoring effects — the first opinion expressed shapes subsequent evaluations, regardless of evidence quality. Written notes before discussion prevent this.
+**Written notes before discussion.** Every interviewer records their scores and evidence in writing before the debrief begins. Research consistently shows that oral-first debriefs produce anchoring effects — the first opinion expressed shapes subsequent evaluations, regardless of evidence quality.[^2] Written notes before discussion prevent this.
 
 **Score submission before debrief.** Scores are submitted (to the recruiter or an ATS system) before the debrief. This creates an auditable record and prevents retroactive score adjustment to align with consensus.
 
@@ -256,3 +256,6 @@ Adding interview stages past the point of new signal because the panel is not co
 
 **The Comfort Hire.**
 Hiring the candidate the panel is most comfortable with rather than the most capable. Comfort correlates with similarity. The candidate who challenges the panel's assumptions, asks hard clarifying questions, and pushes back on an underspecified prompt is demonstrating exactly the behavior a strong engineer should demonstrate in production — but they are often experienced as difficult in an interview context.
+
+[^1]: Schmidt, F. L., & Hunter, J. E. (1998). The validity and utility of selection methods in personnel psychology: Practical and theoretical implications of 85 years of research findings. *Psychological Bulletin*, 124(2), 262–274. The canonical meta-analysis on interview validity; structured interviews consistently outpredict unstructured ones across job types and levels.
+[^2]: Tversky, A., & Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. *Science*, 185(4157), 1124–1131. The foundational anchoring-effect research; the application to group debriefs (where the first speaker's framing shapes subsequent evaluations) is its direct downstream use.

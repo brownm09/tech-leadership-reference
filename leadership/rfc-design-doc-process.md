@@ -174,6 +174,8 @@ Add this block to the RFC document after the decision is made:
 
 ### RFC Document Skeleton
 
+Write the Summary section last — it should compress the completed document, not introduce it.
+
 ```markdown
 # RFC-[number]: [Title]
 
@@ -188,8 +190,7 @@ Add this block to the RFC document after the decision is made:
 
 ## Summary
 
-[One paragraph: the problem, the proposed solution, and why it matters.
-Write this last — it should summarize the document, not introduce it.]
+[One paragraph: the problem, the proposed solution, and why it matters.]
 
 ---
 
