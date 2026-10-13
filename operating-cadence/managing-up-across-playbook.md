@@ -8,7 +8,7 @@ Both relationships function as skills. They carry mechanics, failure modes, and 
 
 ## Background and Motivation
 
-This framework draws on the cross-functional program work at ActBlue Technical Services (2022–2025), where I owned a multi-year PCI environment deprecation program requiring sustained alignment across engineering, legal, finance, product, and account operations, alongside management of a platform directorate of approximately twenty engineers across six teams. The challenges of managing up (maintaining executive visibility and trust through a multi-year program with shifting compliance deadlines) and across (coordinating four to five of those teams on the PCI program directly, along with external audit timelines and non-technical stakeholders carrying different incentives) ran parallel and interdependent. Mismanaging either created cascading problems in the other.
+This framework draws on the cross-functional program work at ActBlue Technical Services (2022–2025), where I owned a multi-year PCI environment deprecation program requiring sustained alignment across engineering, legal, finance, product, and account operations, alongside management of a platform directorate of approximately twenty engineers across six teams. The challenges of managing up (maintaining executive visibility and trust through a multi-year program with shifting compliance deadlines) and across (coordinating five engineering teams on the PCI program directly, some of them mine and some not, along with external audit timelines and non-technical stakeholders carrying different incentives) ran parallel and interdependent. Mismanaging either created cascading problems in the other.
 
 ---
 

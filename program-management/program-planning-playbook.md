@@ -6,7 +6,7 @@ Multi-team technical programs are where engineering leadership makes or breaks d
 
 ## Background and Motivation
 
-This playbook was developed from the PCI environment deprecation program at ActBlue Technical Services (2022–2025) — a multi-year initiative I owned from vision through full completion. I owned the vision, the business case, the executive alignment, and the cross-team coordination across 4–5 engineering teams with stakeholders in product, compliance, legal, finance, and account operations. Outcome: full deprecation; 2,600+ accounts migrated to Stripe; 30% codebase reduction.
+This playbook was developed from the PCI environment deprecation program at ActBlue Technical Services (2022–2025) — a multi-year initiative I owned from vision through full completion. I owned the vision, the business case, the executive alignment, and the cross-team coordination across 5 engineering teams with stakeholders in product, legal, finance, account operations, and security. Outcome: full deprecation; 2,600+ accounts migrated to Stripe; 7,000+ lines of payments code removed.
 
 ## When to Use This
 
