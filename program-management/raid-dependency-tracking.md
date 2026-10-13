@@ -6,7 +6,7 @@ The RAID log is the artifact that separates programs that surface problems early
 
 ## Background and Motivation
 
-This framework was developed from the dependency tracking work on the PCI environment deprecation and payment processor migration programs at ActBlue Technical Services (2022–2025). I owned cross-team coordination across 4–5 engineering teams running against both external audit deadlines and internal milestones. The RAID format here is the one that surfaced dependencies early enough to manage them — not after they were blocking.
+This framework was developed from the dependency tracking work on the PCI environment deprecation and payment processor migration programs at ActBlue Technical Services (2022–2025). I owned cross-team coordination across 5 engineering teams running against both external audit deadlines and internal milestones. The RAID format here is the one that surfaced dependencies early enough to manage them — not after they were blocking.
 
 ## When to Use This
 

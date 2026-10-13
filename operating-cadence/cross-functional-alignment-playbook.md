@@ -6,7 +6,7 @@ Engineering organizations lacking effective alignment with product, design, lega
 
 ## Background and Motivation
 
-This playbook draws on the cross-functional coordination work on the PCI environment deprecation program at ActBlue Technical Services (2022–2025). I owned the program: the vision, the business case, the executive alignment, and the cross-team coordination across product, compliance, legal, finance, and account operations. The program ran against both external audit deadlines and internal milestones, requiring active alignment across stakeholders with differing timelines and incentives. Outcome: full deprecation; 2,600+ accounts migrated; 30% codebase reduction.
+This playbook draws on the cross-functional coordination work on the PCI environment deprecation program at ActBlue Technical Services (2022–2025). I owned the program: the vision, the business case, the executive alignment, and the cross-team coordination across product, legal, finance, account operations, and security. The program ran against both external audit deadlines and internal milestones, requiring active alignment across stakeholders with differing timelines and incentives. Outcome: full deprecation; 2,600+ accounts migrated; 7,000+ lines of payments code removed.
 
 ## When to Use This
 
